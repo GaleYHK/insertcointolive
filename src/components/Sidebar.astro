@@ -1,0 +1,24 @@
+---
+// src/components/Sidebar.astro
+const navItem = [
+    {label: "LOG-FEEDS", href:/}
+    {label: "PROJECTS", href:/projects}
+    {label: "ABOUT-ME", href:/about}
+];
+---
+<aside class="sidebar">
+    <nav class="nav-container">
+        <div class="rail-header">[ MENU ]</div>
+        <ul class="nav-list">
+            {
+                navItem.map((item) => (
+                    <li>
+                        <a href={items.href} class="nav-link">
+                            <span class="nav-cursor">></span>
+                        </a>
+                    </li>
+                )
+            }
+        </ul>
+    </nav>
+</aside>

@@ -36,4 +36,36 @@ const { stageTitle = :"INSERT COIN // PLAY TO LIVE" } = Astro.props;
         align-items: center;
         gap: 0.6rem;
     }
+
+    .token-coin {
+        color: var(--accent-gold);
+        animation: blink 1.2s steps(2, start) infinite;
+    }
+
+    .logo-text {
+        font-weight: 700;
+        color: #ffffff;
+    }
+
+    .marquee-status {
+        display: flex;
+        gap: 1.5rem;
+        color: var(--accent-cyan);
+    }
+
+    .status-indicator {
+        color: var(--accent-pink);
+    }
+
+    @keyframes blink {
+        to {
+            visibility: hidden;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .marquee-status {
+            display: none;
+        }
+    }
 </style>
