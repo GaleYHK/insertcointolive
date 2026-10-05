@@ -13,12 +13,51 @@ const navItem = [
             {
                 navItem.map((item) => (
                     <li>
-                        <a href={items.href} class="nav-link">
+                        <a href={item.href} class="nav-link">
                             <span class="nav-cursor">></span>
+                            <span class="nav-label">{item.label}</span>
                         </a>
                     </li>
-                )
+                ))
             }
         </ul>
     </nav>
 </aside>
+
+style>
+    .sidebar {
+        background-color: var(--bg-penal);
+        border-right: 1px solid #232838;);
+        padding: 1.5rem 1rem;
+    }
+
+    .nav-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rail-header {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .nav-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .nav-link {
+        text-decoration: none;
+        color: #333;
+        display: flex;
+        align-items: center;
+        padding: 5px 0;
+    }
+
+    .nav-cursor {
+        margin-right: 5px;
+    }
+
+    .nav-label {
+        font-size: 14px;
+    }
