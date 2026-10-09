@@ -1,5 +1,5 @@
 ---
-// src/layouts/Layouts.astro
+// src/layouts/Layout.astro
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
 
@@ -37,7 +37,6 @@ const { title = "InsertCoinToLive" } = Astro.props;
 		  <div class="cabinet-grid">
 			<!-- Left Sidebar -->
 			 <Sidebar />
-
 			 <main class="center-viewpoint">
 				<slot />
 			 </main>
@@ -66,7 +65,7 @@ const { title = "InsertCoinToLive" } = Astro.props;
 		margin: 0;
 		padding: 0;
 		width: 100%;
-		min-height: 100%;
+		min-height: 100vh;
 		background-color: var(--bg-void);
 		color: #e6e6e6;
 		font-family: var(--font-body);
@@ -74,18 +73,19 @@ const { title = "InsertCoinToLive" } = Astro.props;
 
 	.cabinet-grid{
 		display: grid;
-		grid-template-columns: 240px 1fr;
+		grid-template-columns: 240px minmax(0, 1fr);
 		min-height: calc(100vh - 49px);
 	}
 
-	.content-viewport{
+	.center-viewpoint{
 		padding: 2rem;
-		overflow-y: auto;
+		min-width: 0;
+		width: 100%;
 	}
 
 	@media 	(max-width: 768px) {
 		.cabinet-grid{
-			grid-template-columns: 1fr;
+			grid-template-columns: 100%;
 		}
 	}
 </style>

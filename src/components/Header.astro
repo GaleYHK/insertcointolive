@@ -39,7 +39,6 @@ const { stageTitle = "INSERT COIN // PLAY TO LIVE" } = Astro.props;
 
     .token-coin {
         color: var(--accent-gold);
-        animation: blink 1.2s steps(2, start) infinite;
     }
 
     .logo-text {
@@ -57,6 +56,10 @@ const { stageTitle = "INSERT COIN // PLAY TO LIVE" } = Astro.props;
         color: var(--accent-pink);
     }
 
+    .stage-name, .token-coin {
+        animation: blink 1.2s steps(2, start) infinite;
+    }
+
     @keyframes blink {
         to {
             visibility: hidden;
@@ -68,4 +71,5 @@ const { stageTitle = "INSERT COIN // PLAY TO LIVE" } = Astro.props;
             display: none;
         }
     }
+    
 </style>
