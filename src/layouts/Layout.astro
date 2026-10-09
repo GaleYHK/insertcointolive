@@ -1,4 +1,8 @@
 ---
+// src/layouts/Layouts.astro
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
+
 interface Props {
 	title?: string;
 }
@@ -27,7 +31,17 @@ const { title = "InsertCoinToLive" } = Astro.props;
 		/>
 	</head>
 	<body>
-		<slot />
+		<!-- 1. Top Header -->
+		 <Header />	
+		 <!-- 2. Sidebar -->
+		  <div class="cabinet-grid">
+			<!-- Left Sidebar -->
+			 <Sidebar />
+
+			 <main class="center-viewpoint">
+				<slot />
+			 </main>
+		  </div>
 	</body>
 </html>
 
@@ -41,6 +55,12 @@ const { title = "InsertCoinToLive" } = Astro.props;
 		--font-display: 'JetBrains Mono' , monospace;
 		--font-body: 'Space Grotesk' , sans-serif;
 	}
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
 	html,
 	body {
 		margin: 0;
@@ -50,5 +70,22 @@ const { title = "InsertCoinToLive" } = Astro.props;
 		background-color: var(--bg-void);
 		color: #e6e6e6;
 		font-family: var(--font-body);
+	}
+
+	.cabinet-grid{
+		display: grid;
+		grid-template-columns: 240px 1fr;
+		min-height: calc(100vh - 49px);
+	}
+
+	.content-viewport{
+		padding: 2rem;
+		overflow-y: auto;
+	}
+
+	@media 	(max-width: 768px) {
+		.cabinet-grid{
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

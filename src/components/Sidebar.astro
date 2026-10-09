@@ -1,9 +1,9 @@
 ---
 // src/components/Sidebar.astro
 const navItem = [
-    {label: "LOG-FEEDS", href:/}
-    {label: "PROJECTS", href:/projects}
-    {label: "ABOUT-ME", href:/about}
+    {label: "LOG-FEEDS", href:"/"},
+    {label: "PROJECTS", href:"/projects"},
+    {label: "ABOUT-ME", href:"/about"},
 ];
 ---
 <aside class="sidebar">
@@ -24,40 +24,51 @@ const navItem = [
     </nav>
 </aside>
 
-style>
+<style>
     .sidebar {
-        background-color: var(--bg-penal);
+        background-color: var(--bg-panel);
         border-right: 1px solid #232838;);
         padding: 1.5rem 1rem;
-    }
-
-    .nav-container {
-        display: flex;
-        flex-direction: column;
+        font-family: var(--font-display);
     }
 
     .rail-header {
-        font-weight: bold;
-        margin-bottom: 10px;
+        background-color: var (--accent-gold);
+        font-size: 0.75rem;
+        letter-spacing: 0.1rem;
+        padding-left: 1.21rem;
+        margin-bottom: 1rem;
     }
 
     .nav-list {
-        list-style-type: none;
+        list-style: none;
         padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem:=;
     }
 
     .nav-link {
         text-decoration: none;
-        color: #333;
+        color: #9ba1b5;
         display: flex;
         align-items: center;
-        padding: 5px 0;
+        padding: 0.5rem 0.75rem;
+        text-decoration: none;
+        font-size: 0.5rem;
+        border-left: 3px solid transparent;
+        transition: all 0.15s ease-in-out;
     }
 
     .nav-cursor {
-        margin-right: 5px;
+        color: transparent;
+        transition: color 0.15s ease;
     }
 
-    .nav-label {
-        font-size: 14px;
+    .nav-link:hover .nav-cursor {
+        color: var(--accent-pink);
     }
+
+</style>
+
