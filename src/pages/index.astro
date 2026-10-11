@@ -1,108 +1,20 @@
 ---
+import Layout from '../../insertcointolive/src/layouts/Layout.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<div class="container"
-		><header>
-			<h1>Insert Coin To Live</h1>
-			<p class="tagline">Press a button to start.</p>
-		</header>
-
-		<hr />
-
-		<section class="intro">
-			<p>
-				Welcome my friends. This place is my personal documents and dairy about my life,
-				any ongoing project. It will include my insights and thoughts about everything.
-			</p>
-		</section>
-
-		<section class="posts">
-			<h2>Log</h2>
-			<ul>
-					<li>
-						<span class="date">2026-09-28</span>
-						<a href="#">System Initialized: Establishing the Perimeter</a>
-					</li>
-			</ul>
-		</section>
-	</div>
+<Layout title="INSERT COIN // PLAY TO LIVE">
+	<section class = "title-screen">
+		<div class="title-cluster">
+			<p class="stage-tag">[ WELCOME TO THE ARCHIVE ]</p>
+			<h1 class="arcade-tag">INSERT COIN<br />TO LIVE</h1>
+		</div>
+		<div class="prompt-pivot">
+			<p class="coin-prompt">PRESS START // 1 PLAYER ONLY</p>
+			<a href="/about" class="start-button">
+				<span class="btn-cursor">></span>
+				<span class="'btn-text">GAME START</span>
+			</a>
+		</div>
+	</section>
 </Layout>
-
-<style>
-	:root {
-			color-scheme: dark;
-	}
-
-	body {
-			background-color: #0f1115
-			color: #e2e8f0;
-			font-family: var(--font-body);
-			margin: 0;
-			padding: 0;
-	}
-
-	.container {
-			max-width: 680px;
-			margin: 0 auto;
-			padding: 0 24px;
-			line-height: 1.6;
-	}
-
-	h1 {
-			font-size: 2rem;
-			font-weight: 700;
-			letter-spacing: -0.05em;
-			margin-bottom: 0.25rem;
-			font-family: var(--font-display);
-			color: #ffffff;
-	}
-
-	.tagline{
-			color: #94a3b8;
-			font-size: 1rem;
-			margin-top: 0;
-	}
-
-	h2 {
-			font-size: 1.25rem;
-			color: #f1f5f9;
-			margin-bottom: 1rem;
-	}
-
-	ul {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-	}
-
-	li {
-			display: flex;
-			font-size: 0.85rem;
-			gap: 16px;
-			align-items: baseline;
-			margin-bottom: 0.5rem;
-			font-family: var(--font-display);
-
-	}
-
-	.date {
-			font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-			color: #64748b;
-			font-size: 0.85rem;
-	}
-
-	a {
-			color: #38bdf8;
-			text-decoration: none;
-	}
-
-	a:hover {
-			text-decoration: underline;
-	}
-
-</style>

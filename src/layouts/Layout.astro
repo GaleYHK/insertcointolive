@@ -5,8 +5,9 @@ import Sidebar from '../components/Sidebar.astro';
 
 interface Props {
 	title?: string;
+	showNav?: boolean
 }
-const { title = "InsertCoinToLive" } = Astro.props;
+const { title = "InsertCoinToLive", showNav = true } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -32,11 +33,12 @@ const { title = "InsertCoinToLive" } = Astro.props;
 	</head>
 	<body>
 		<!-- 1. Top Header -->
-		 <Header />	
+		 {showNav && <Header />}	
 		 <!-- 2. Sidebar -->
-		  <div class="cabinet-grid">
+		  <div class= {showNav ? "cabinet-grid" : "opening-page"}>
 			<!-- Left Sidebar -->
-			 <Sidebar />
+			 {showNav && <Sidebar />}
+
 			 <main class="center-viewpoint">
 				<slot />
 			 </main>
@@ -75,6 +77,13 @@ const { title = "InsertCoinToLive" } = Astro.props;
 		display: grid;
 		grid-template-columns: 240px minmax(0, 1fr);
 		min-height: calc(100vh - 49px);
+	}
+
+	.opening-page{
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		width: 100%;
 	}
 
 	.center-viewpoint{
